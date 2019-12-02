@@ -220,9 +220,9 @@ insert into Fai_Play
 values (4, 01, default, default)
 insert into Fai_Play
 values (3, 01, default, default)
-insert into Fai_Play -- ativa a trigger do barroco ADD
-values (37, 01, default, default)
 insert into Fai_Play
 values (02, 02, default, default)
 insert into Fai_Play
 values (01, 01, default, default)
+insert into Fai_Play -- ativa a trigger do barroco ADD
+values (37, 01, default, default)
