@@ -86,30 +86,27 @@ create table Playlist(
 )	on BDSpotPer_fg02
 
 create table Fai_Play(
+	cod_fai smallint NOT NULL,
+	cod_play smallint NOT NULL,
 	dt_tocada date default getdate(),
 	n_vezes_tocada smallint default 0,
-	cod_alb smallint NOT NULL,
-	cod_play smallint NOT NULL,
-	cod_fai smallint NOT NULL,
 	constraint Fai_Play_pk PRIMARY KEY (cod_fai, cod_play),
-	constraint Fai_Play_fk_Faixa FOREIGN KEY (cod_fai, cod_alb) REFERENCES Faixas (cod_fai, cod_alb) ON UPDATE cascade ON DELETE cascade,
+	constraint Fai_Play_fk_Faixa FOREIGN KEY (cod_fai) REFERENCES Faixas (cod_fai) ON UPDATE cascade ON DELETE cascade,
 	constraint Fai_Play_fk_Playlist FOREIGN KEY (cod_play) REFERENCES Playlist (cod_play) ON UPDATE cascade ON DELETE NO ACTION
 )	on BDSpotPer_fg02
 
 create table Fai_Comp(
 	cod_fai smallint NOT NULL,
-	cod_alb smallint NOT NULL,
 	cod_comp smallint NOT NULL,
 	constraint Fai_Comp_pk PRIMARY KEY (cod_fai, cod_comp),
-	constraint Fai_Comp_fk_Faixa FOREIGN KEY (cod_fai, cod_alb) REFERENCES Faixas (cod_fai, cod_alb) ON UPDATE cascade ON DELETE cascade,
+	constraint Fai_Comp_fk_Faixa FOREIGN KEY (cod_fai) REFERENCES Faixas (cod_fai) ON UPDATE cascade ON DELETE cascade,
 	constraint Fai_Comp_fk_Compositor FOREIGN KEY (cod_comp) REFERENCES Compositor (cod_comp) ON UPDATE cascade ON DELETE NO ACTION
 )	on BDSpotPer_fg01
 
 create table Fai_Int(
 	cod_fai smallint NOT NULL,
-	cod_alb smallint NOT NULL,
 	cod_int smallint NOT NULL,
 	constraint Fai_Int_pk PRIMARY KEY (cod_fai, cod_int),
-	constraint Fai_Int_fk_Faixa FOREIGN KEY (cod_fai, cod_alb) REFERENCES Faixas (cod_fai, cod_alb) ON UPDATE cascade ON DELETE cascade,
+	constraint Fai_Int_fk_Faixa FOREIGN KEY (cod_fai) REFERENCES Faixas (cod_fai) ON UPDATE cascade ON DELETE cascade,
 	constraint Fai_Int_fk_Interprete FOREIGN KEY (cod_int) REFERENCES Interprete (cod_int) ON UPDATE cascade ON DELETE NO ACTION
 )	on BDSpotPer_fg01
