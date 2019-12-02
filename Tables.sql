@@ -44,7 +44,7 @@ create table Faixas(
 	cod_tp_comp smallint NOT NULL,
 	tmp_exec time NOT NULL,
 	tp_grav nvarchar(3) NOT NULL,
-	constraint faixa_pk PRIMARY KEY (cod_fai),
+	constraint faixa_pk PRIMARY KEY nonclustered (cod_fai),
 	constraint faixa_fk_Tp_Comp FOREIGN KEY (cod_tp_comp) REFERENCES Tipo_Comp(cod_tp_comp) ON UPDATE cascade ON DELETE NO ACTION,
 	constraint album_fk FOREIGN KEY (cod_alb) REFERENCES Album (cod_alb) ON UPDATE cascade ON DELETE cascade,
 	constraint tp_grav_ck CHECK (tp_grav in ('ADD' , 'DDD'))
