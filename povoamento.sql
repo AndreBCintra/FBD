@@ -6,23 +6,23 @@ insert into Gravadora(cod_grav, nome, homepage, endereco)
 values (03, 'gravadora 3', 'www.grav3.com.br', 'Rua ex3')
 
 insert into Album
-values (10.00, 01, 'muito top', 01, '2001-12-3', '2019-4-6')
+values (10.00, 01, 'muito top', 01, '2001-12-3', '2019-4-6', 'Download')
 insert into Album
-values (12.00, 02, 'muito top', 01, '1999-12-3', '2000-4-6')
+values (12.00, 02, 'muito top', 01, '1999-12-3', '2000-4-6', 'Download')
 insert into Album
-values (10.90, 03, 'muito top', 01, '2001-12-3', '2012-4-6')
+values (10.90, 03, 'muito top', 01, '2001-12-3', '2012-4-6', 'Download')
 insert into Album
-values (14.00, 04, 'muito top', 01, '2001-12-3', '2014-4-6')
+values (14.00, 04, 'muito top', 01, '2001-12-3', '2014-4-6', 'Fisica')
 insert into Album
-values (10.00, 05, 'muito top', 02, '1999-01-01', '2019-4-6')
+values (10.00, 05, 'muito top', 02, '1999-01-01', '2019-4-6', 'Fisica')
 insert into Album
-values (10.00, 06, 'muito top', 02, '2000-01-01', '2000-4-6')
+values (10.00, 06, 'muito top', 02, '2000-01-01', '2000-4-6', 'Download')
 insert into Album
-values (10.00, 07, 'muito top', 03, '2001-12-3', '2019-4-6')
+values (10.00, 07, 'muito top', 03, '2001-12-3', '2019-4-6', 'Fisica')
 insert into Album
-values (10.00, 08, 'muito top', 03, '2001-12-3', '2019-4-6')
+values (10.00, 08, 'muito top', 03, '2001-12-3', '2019-4-6', 'Fisica')
 insert into Album
-values (10.00, 09, 'muito top', 02, '2001-12-3', '2019-4-6')
+values (10.00, 09, 'muito top', 02, '2001-12-3', '2019-4-6', 'Download')
 
 insert into Tipo_Comp
 values (01, 'Sinfonia')
@@ -163,7 +163,7 @@ insert into Faixas
 values (63, 64, 01, 'muito top', 01, '00:02:34', 'ADD')
 insert into Faixas
 values (64, 65, 01, 'muito top', 01, '00:02:34', 'ADD')
-insert into Faixas
+insert into Faixas -- aciona o gatilho das 64 faixas
 values (65, 67, 01, 'muito top', 01, '00:02:34', 'ADD')
 insert into Faixas
 values (01, 68, 02, 'tp comp = concerto e per = barroco', 04, '00:02:34', 'ADD')
@@ -191,19 +191,17 @@ insert into Compositor
 values (04, 'so pra testar o bagulho do barroco la', 'barroco', '1841-09-08', '1904-05-01', 01)
 
 insert into Fai_Comp
-values (03, 01, 02)
+values (03, 02)
 insert into Fai_Comp
-values (01, 01, 02)
+values (01, 02)
 insert into Fai_Comp
-values (03, 01, 03)
+values (03, 03)
 insert into Fai_Comp
-values (04, 02, 02)
+values (04, 02)
 insert into Fai_Comp
-values (68, 02, 03)
+values (44, 04)
 insert into Fai_Comp
-values (44, 01, 04)
-insert into Fai_Comp
-values (37, 01, 03)
+values (37, 03)
 insert into Fai_Comp
 values (02, 01, 03)
 
@@ -213,19 +211,18 @@ insert into Playlist
 values (02, 'só concerto barroco', getdate(), default)
 
 insert into Fai_Play
-values (02, 01, 01, default, default)
+values (02, 01, default, default)
 insert into Fai_Play
-values (44, 01, 01, default, default)
+values (44, 01, default, default)
 insert into Fai_Play
-values (68, 02, 02, default, default)
+values (68, 02, default, default)
 insert into Fai_Play
-values (4, 02, 01, default, default)
+values (4, 01, default, default)
 insert into Fai_Play
---values (3, 01, 01, default, default)
---insert into Fai_Play -- da errado pq é barroco ADD
-values (37, 01, 01, default, default)
+values (3, 01, default, default)
+insert into Fai_Play -- ativa a trigger do barroco ADD
+values (37, 01, default, default)
 insert into Fai_Play
-values (02, 01, 02, default, default)
+values (02, 02, default, default)
 insert into Fai_Play
-values (01, 01, 01, default, default)
-
+values (01, 01, default, default)
