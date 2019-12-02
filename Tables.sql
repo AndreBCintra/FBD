@@ -13,7 +13,7 @@ create table Telefones(
 	cod_grav smallint not null,
 	constraint Telefones_pk PRIMARY KEY (numero),
 	constraint Telefones_Gravadora_fk FOREIGN KEY (cod_grav) REFERENCES Gravadora (cod_grav)
-}	on BDSpotPer_fg01
+)	on BDSpotPer_fg01
 
 create table Album(
 	pr_de_compra dec(6,2) NOT NULL,
