@@ -15,6 +15,7 @@ begin
 
 	if @per_mus like 'Barroco' and @tp_grav like 'ADD'
 		begin
+			raiserror('Faixa do periodo com tipo ADD', 1, 1)
 			rollback transaction
 		end
 end
